@@ -1,16 +1,16 @@
 
-# Install the bzflag ansible role
+# Install the sumo ansible role
 
 ```bash
 # Create a directory for the ansible role. 
-install -d ~/.ansible/roles/computate.computate_bzflag
+install -d ~/.ansible/roles/computate.computate_sumo
 
-# Clone the bzflag ansible role. 
-git clone git@github.com:computate-org/computate_bzflag.git ~/.ansible/roles/computate.computate_bzflag
-cd ~/.ansible/roles/computate.computate_bzflag
+# Clone the sumo ansible role. 
+git clone git@github.com:computate-org/computate_sumo.git ~/.ansible/roles/computate.computate_sumo
+cd ~/.ansible/roles/computate.computate_sumo
 ```
 
-# Run the bzflag ansible playbook to install bzflag locally. 
+# Run the sumo ansible playbook to install sumo locally. 
 
 ```bash
 ansible-playbook install.yml
