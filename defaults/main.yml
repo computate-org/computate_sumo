@@ -50,7 +50,7 @@ APP_TAG: v1_12_0
 APP_DESKTOP: "{{ APP_PREFIX }}/share/applications/{{ APP_NAME }}.desktop"
 APP_README: "{{ APP_SRC }}/README.md"
 APP_ICON: "{{ APP_SHARE }}/data/logo/sumo-128x138.png"
-APP_EXEC: "{{ APP_PREFIX }}/bin/sumo-gui"
+APP_EXEC: "env LD_LIBRARY_PATH={{ APP_PREFIX }}/lib {{ APP_PREFIX }}/bin/sumo-gui"
 APP_KEYWORDS: "simulator;traffic;"
 APP_CATEGORIES: "Utility;Accessibility;"
 MAKE_CORES: "{{ ansible_processor_vcpus | default(1) }}"

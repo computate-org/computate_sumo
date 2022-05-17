@@ -1,8 +1,16 @@
 ---
-- include_role:
-    name: computate.computate_fox
-- include_role:
+- name: Install prerequisite computate_sqlite
+  tags:
+    - prerequisite
+    - prerequisite_sqlite
+  include_role:
     name: computate.computate_sqlite
+- name: Install prerequisite computate_fox
+  tags:
+    - prerequisite
+    - prerequisite_fox
+  include_role:
+    name: computate.computate_fox
 - name: "Install dependencies as root: {{ APP_DEPENDENCIES | join(' ') }}"
   package:
     name: "{{ APP_DEPENDENCIES }}"
@@ -49,11 +57,11 @@
     chdir: "{{ APP_SRC }}/build/cmake-build"
 - name: "Run the make script in {{ APP_SRC }}"
   shell:
-    cmd: "make -j {{ MAKE_CORES }}"
+    cmd: "env PKG_CONFIG_PATH={{ APP_PREFIX }}/lib/pkgconfig LD_LIBRARY_PATH={{ APP_PREFIX }}/lib make -j {{ MAKE_CORES }}"
     chdir: "{{ APP_SRC }}/build/cmake-build"
 - name: "Run the make install script in {{ APP_SRC }}"
   shell:
-    cmd: make install
+    cmd: "env PKG_CONFIG_PATH={{ APP_PREFIX }}/lib/pkgconfig LD_LIBRARY_PATH={{ APP_PREFIX }}/lib make install"
     chdir: "{{ APP_SRC }}/build/cmake-build"
   become: "{{ APP_ROOT }}"
 - name: "Create the launcher {{ APP_DESKTOP }}"
