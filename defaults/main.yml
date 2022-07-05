@@ -54,4 +54,5 @@ APP_EXEC: "env LD_LIBRARY_PATH={{ APP_PREFIX }}/lib {{ APP_PREFIX }}/bin/sumo-gu
 APP_KEYWORDS: "simulator;traffic;"
 APP_CATEGORIES: "Utility;Accessibility;"
 MAKE_CORES: "{{ ansible_processor_vcpus | default(1) }}"
+PKG_INSTALLER: yum
 
