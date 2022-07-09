@@ -47,7 +47,6 @@
 - name: "Create the directory {{ APP_SRC }}/build/cmake-build"
   file:
     name: "{{ APP_SRC }}/build/cmake-build"
-    owner: "{{ APP_USER }}"
     state: directory
   become: "{{ APP_ROOT }}"
 - name: "Run the cmake script in {{ APP_SRC }}/build/cmake-build: cmake -DCMAKE_INSTALL_PREFIX={{ APP_PREFIX }} ../.."
