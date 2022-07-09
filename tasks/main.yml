@@ -24,7 +24,6 @@
 - name: "Create the directory {{ APP_SRC }}"
   file:
     name: "{{ APP_SRC }}"
-    owner: "{{ APP_USER }}"
     state: directory
   become: "{{ APP_ROOT }}"
 - name: "Check for the README file {{ APP_README }}"
