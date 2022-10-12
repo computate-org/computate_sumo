@@ -1,34 +1,34 @@
 ---
-- name: Install prerequisite computate_sqlite
-  tags:
-    - prerequisite
-    - prerequisite_sqlite
-  include_role:
-    name: computate.computate_sqlite
-- name: Install prerequisite computate_fox
-  tags:
-    - prerequisite
-    - prerequisite_fox
-  include_role:
-    name: computate.computate_fox
-- name: Install prerequisite computate_gtest
-  tags:
-    - prerequisite
-    - prerequisite_gtest
-  include_role:
-    name: computate.computate_gtest
-- name: Install prerequisite computate_eigen
-  tags:
-    - prerequisite
-    - prerequisite_eigen
-  include_role:
-    name: computate.computate_eigen
-- name: Install prerequisite computate_gdal
-  tags:
-    - prerequisite
-    - prerequisite_gdal
-  include_role:
-    name: computate.computate_gdal
+#- name: Install prerequisite computate_sqlite
+#  tags:
+#    - prerequisite
+#    - prerequisite_sqlite
+#  include_role:
+#    name: computate.computate_sqlite
+#- name: Install prerequisite computate_fox
+#  tags:
+#    - prerequisite
+#    - prerequisite_fox
+#  include_role:
+#    name: computate.computate_fox
+#- name: Install prerequisite computate_gtest
+#  tags:
+#    - prerequisite
+#    - prerequisite_gtest
+#  include_role:
+#    name: computate.computate_gtest
+#- name: Install prerequisite computate_eigen
+#  tags:
+#    - prerequisite
+#    - prerequisite_eigen
+#  include_role:
+#    name: computate.computate_eigen
+#- name: Install prerequisite computate_gdal
+#  tags:
+#    - prerequisite
+#    - prerequisite_gdal
+#  include_role:
+#    name: computate.computate_gdal
 - name: "Install dependencies as root: {{ APP_DEPENDENCIES | join(' ') }}"
   package:
     name: "{{ APP_DEPENDENCIES }}"
